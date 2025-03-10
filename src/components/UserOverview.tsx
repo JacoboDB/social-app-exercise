@@ -29,7 +29,7 @@ const UserOverview = ({ user }: UserOverviewProps) => {
             </Box>
             <Box>
                 <Typography component="div">
-                    {user?.followers.toString()}
+                    {user?.followers?.length}
                 </Typography>
                 <Typography component="div">
                     {"Followers"}
@@ -37,7 +37,7 @@ const UserOverview = ({ user }: UserOverviewProps) => {
             </Box>
             <Box>
                 <Typography component="div">
-                    {user?.following.toString()}
+                    {user?.following?.length}
                 </Typography>
                 <Typography component="div">
                     {"Following"}

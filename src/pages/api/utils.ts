@@ -158,18 +158,29 @@ export const posts: PostType[] = [
     },
 ];
 
+const fillFollowers = (num: Number) => {
+    return Array(num).map(item => {
+        return {
+            name: `User${item}`,
+            id: `t${item}`,
+            description: `Profile for the user${item}`,
+            followers: [],
+            following: []
+        }
+    })
+}
 
-export const getUniqueUsers = (): ProfileType[] => {
+
+const getUniqueUsers = (): ProfileType[] => {
     const usersMap = new Map<string, ProfileType>();
-
     posts.forEach((post) => {
         if (!usersMap.has(post.authorId.toString())) {
             usersMap.set(post.authorId.toString(), {
                 id: post.authorId,
                 name: post.authorName,
                 description: `Profile of ${post.authorName}`,
-                followers: Math.floor(Math.random() * 1000), 
-                following: Math.floor(Math.random() * 1000),
+                followers: fillFollowers(Math.floor(Math.random() * 15)), 
+                following: fillFollowers(Math.floor(Math.random() * 15)), 
             });
         }
     });

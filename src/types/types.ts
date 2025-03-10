@@ -4,8 +4,6 @@ export type CommentType = {
     authorId: String,
     authorName: String,
     creationDate: Date,
-
-
 }
 
 export type PostType = {
@@ -24,7 +22,7 @@ export type ProfileType = {
     id: String,
     name: String,
     description: String;
-    followers: Number;
-    following: Number;
+    followers: ProfileType[];
+    following: ProfileType[];
     posts?: PostType[]
 }
