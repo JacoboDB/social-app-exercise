@@ -39,7 +39,7 @@ export default function ProductPage() {
     if (loading) {
       <Grid container spacing={1}>
         {[1, 2, 3, 4].map((item) =>
-          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+          <Grid key={item} size={{ xs: 12, sm: 6, md: 4 }}>
             <PostListItemSkeleton />
           </Grid>
         )}

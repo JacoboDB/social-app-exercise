@@ -49,7 +49,7 @@ const PostDetail = ({ post }: { post: PostType }) => {
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: 'column', mt: 0 }}>
                     {post.comments?.map((comment) => {
-                        return <Box sx={{ display: 'flex', alignItems: 'center', mt: 0 }}>
+                        return <Box key={comment.id.toString()} sx={{ display: 'flex', alignItems: 'center', mt: 0 }}>
                             <Link href={`/profile/${comment.authorId}`}>
                                 <Typography variant="body1" component="div" sx={{ fontWeight: 'bold' }}>
                                     {comment.authorName + ':'}

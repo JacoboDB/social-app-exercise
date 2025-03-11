@@ -25,7 +25,7 @@ export default function Home() {
   const renderFeed = () => {
     if (loading) {
       return <>
-        {[1,2].map((_) => <PostListItemSkeleton />)}
+        {[1,2].map((item) => <PostListItemSkeleton key={item}/>)}
       </>
     } else {
       return <Feed items={postsFeed} />;

@@ -9,7 +9,7 @@ interface FeedProps {
 const Feed = (props:FeedProps) => {
     return <>
         {props.items?.map(item => {
-            return <PostListItem post={item}/>
+            return <PostListItem key={item.id.toString()} post={item}/>
         })}
     </>
 }

@@ -10,7 +10,7 @@ interface PostGridProps {
 const PostGrid = ({ items }: PostGridProps) => {
     return <Grid container spacing={1}>
         {items?.map(item => {
-            return <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+            return <Grid key={item.id.toString()} size={{ xs: 12, sm: 6, md: 4 }}>
                 <PostListItem post={item} />
             </Grid>
         })}
